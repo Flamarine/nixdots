@@ -1,0 +1,3 @@
+{
+  legion = import ./legion.nix;
+}
