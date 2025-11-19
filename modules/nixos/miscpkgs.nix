@@ -5,6 +5,5 @@
     wget
     fastfetch
     hyfetch
-    bcachefs-tools
   ];
 }
