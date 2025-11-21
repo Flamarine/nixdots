@@ -8,4 +8,4 @@ final: prev: {
     env.NIX_CFLAGS_LINK = "-fuse-ld=mold -Wl,-O3 -Wl,--as-needed";
     env.NIX_CFLAGS_COMPILE = "-O3 -march=native -mtune=native -pipe -flto=thin";
   } prev.stdenv;
-};
+}

@@ -36,7 +36,7 @@
       inputs.self.overlays.additions
       inputs.self.overlays.clang-stdenv
       inputs.self.overlays.mold-linker
-      inputs.self.overlays.platform.legion-flags
+      inputs.self.overlays.legion-flags
       inputs.self.overlays.fix-aclhash
       # inputs.self.overlays.unstable-packages
 
@@ -139,7 +139,7 @@
   };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

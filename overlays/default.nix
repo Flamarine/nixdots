@@ -15,7 +15,7 @@
     final.pkgs.acl = prev.pkgs.acl-hashfix;
   };
 
-  platform = import ./platform;
+  legion-flags = import ./platform/legion.nix;
 
   /*
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

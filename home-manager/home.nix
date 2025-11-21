@@ -25,7 +25,9 @@
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       inputs.self.overlays.additions
-      inputs.self.overlays.modifications
+      inputs.self.overlays.clang-stdenv
+      inputs.self.overlays.mold-linker
+      inputs.self.overlays.legion-flags
       inputs.self.overlays.fix-aclhash
       # inputs.self.overlays.unstable-packages
 
