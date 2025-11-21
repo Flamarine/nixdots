@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    zen-browser
+    # zen-browser
+    firefox
     zed-editor-fhs
     netease-cloud-music-gtk
     prismlauncher

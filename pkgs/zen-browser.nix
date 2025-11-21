@@ -29,7 +29,7 @@ let
       owner = "zen-browser";
       repo = "desktop";
       tag = zenVersion;
-      hash = "sha256-lQwwjne+HlBwPb3zsA4SUIpX3kvrbGmDc7wSEw8gBIk=";
+      hash = "sha256-6GHtwLhvsTt4nWt93wMvxip/V2QoNZQz3kAjjkooet4=";
       fetchSubmodules = true;
     };
 

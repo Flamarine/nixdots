@@ -34,7 +34,10 @@
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
       inputs.self.overlays.additions
-      inputs.self.overlays.modifications
+      inputs.self.overlays.clang-stdenv
+      inputs.self.overlays.mold-linker
+      inputs.self.overlays.platform.legion-flags
+      inputs.self.overlays.fix-aclhash
       # inputs.self.overlays.unstable-packages
 
       # You can also add overlays exported from other flakes:
@@ -86,6 +89,7 @@
 
   # TODO: Set your hostname
   networking.hostName = "lagrangeos";
+  networking.networkmanager.enable = true;
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
@@ -119,11 +123,9 @@
   };
 
   i18n = {
-    defaultLocale = "en_SG.UTF-8";
+    defaultLocale = "en_US.UTF-8";
     extraLocales = [
-      "en_US.UTF-8"
-      "zh_CN.UTF-8"
-      "ja_JP.UTF-8"
+      "zh_CN.UTF-8/UTF-8"
     ];
   };
 
@@ -135,6 +137,19 @@
       '';
     };
   };
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   time.timeZone = "Asia/Shanghai";
 

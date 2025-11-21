@@ -26,6 +26,7 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       inputs.self.overlays.additions
       inputs.self.overlays.modifications
+      inputs.self.overlays.fix-aclhash
       # inputs.self.overlays.unstable-packages
 
       # You can also add overlays exported from other flakes:
@@ -70,17 +71,6 @@
     LC_COLLATE = "zh_CN.UTF-8";
     LC_MONETARY = "zh_CN.UTF-8";
     LC_MESSAGES = "zh_CN.UTF-8";
-  };
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
